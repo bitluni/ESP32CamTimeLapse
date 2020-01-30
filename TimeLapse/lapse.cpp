@@ -5,7 +5,7 @@
 
 unsigned long fileIndex = 0;
 unsigned long lapseIndex = 0;
-unsigned long frameInterval = 1000;
+unsigned long frameInterval = 10000;
 bool mjpeg = true;
 bool lapseRunning = false;
 unsigned long lastFrameDelta = 0;
@@ -22,7 +22,7 @@ bool startLapse()
     char path[32];
     for(; lapseIndex < 10000; lapseIndex++)
     {
-        sprintf(path, "/lapse%03d", lapseIndex);
+        sprintf(path, "/lapse%03d", (int)lapseIndex);
         if (!fileExists(path))
         {
             createDir(path);
@@ -37,6 +37,7 @@ bool startLapse()
 bool stopLapse()
 {
     lapseRunning = false;
+    return lapseRunning;
 }
 
 bool processLapse(unsigned long dt)
@@ -57,7 +58,7 @@ bool processLapse(unsigned long dt)
         }
 
         char path[32];
-        sprintf(path, "/lapse%03d/pic%05d.jpg", lapseIndex, fileIndex);
+        sprintf(path, "/lapse%03d/pic%05d.jpg", (int)lapseIndex, (int)fileIndex);
         Serial.println(path);
         if(!writeFile(path, (const unsigned char *)fb->buf, fb->len))
         {

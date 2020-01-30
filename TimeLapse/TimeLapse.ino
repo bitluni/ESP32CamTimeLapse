@@ -15,7 +15,12 @@ void setup()
 	Serial.println();
 	initFileSystem();
 	initCamera();
-
+	
+	
+	
+	// startLapse(); -------- IF YOU WANT AUTO START THE TIMELAPSE
+	
+	
 	WiFi.begin(ssid, password);
 	while (WiFi.status() != WL_CONNECTED)
 	{
@@ -28,6 +33,8 @@ void setup()
 	Serial.print("Camera Ready! Use 'http://");
 	Serial.print(WiFi.localIP());
 	Serial.println("' to connect");
+
+	
 }
 
 void loop()

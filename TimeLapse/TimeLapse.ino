@@ -3,8 +3,8 @@
 #include "camera.h"
 #include "lapse.h"
 
-const char *ssid = "iPhone von Marcel";
-const char *password = "00000000";
+const char *ssid = "...";
+const char *password = "...";
 
 void startCameraServer();
 
@@ -15,7 +15,12 @@ void setup()
 	Serial.println();
 	initFileSystem();
 	initCamera();
-
+	
+	
+	
+	// startLapse(); -------- IF YOU WANT AUTO START THE TIMELAPSE
+	
+	
 	WiFi.begin(ssid, password);
 	while (WiFi.status() != WL_CONNECTED)
 	{
@@ -29,7 +34,7 @@ void setup()
 	Serial.print(WiFi.localIP());
 	Serial.println("' to connect");
 
-// startLapse();
+	
 }
 
 void loop()

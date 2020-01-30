@@ -108,12 +108,12 @@ static esp_err_t capture_handler(httpd_req_t *req)
 
 static esp_err_t startLapseHandler(httpd_req_t *req)
 {
-	startLapse();
+	return startLapse();
 }
 
 static esp_err_t stopLapseHandler(httpd_req_t *req)
 {
-	stopLapse();
+	return stopLapse();
 }
 
 static esp_err_t streamHandler(httpd_req_t *req)
@@ -302,7 +302,7 @@ static esp_err_t status_handler(httpd_req_t *req)
 	p += sprintf(p, "\"hmirror\":%u,", s->status.hmirror);
 	p += sprintf(p, "\"dcw\":%u,", s->status.dcw);
 	p += sprintf(p, "\"colorbar\":%u,", s->status.colorbar);
-	p += sprintf(p, "\"interval\":%u,", interval);
+	p += sprintf(p, "\"interval\":%u,", (int)interval);
 	*p++ = '}';
 	*p++ = 0;
 	httpd_resp_set_type(req, "application/json");

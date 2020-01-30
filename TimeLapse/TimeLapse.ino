@@ -3,8 +3,8 @@
 #include "camera.h"
 #include "lapse.h"
 
-const char *ssid = "...";
-const char *password = "...";
+const char *ssid = "iPhone von Marcel";
+const char *password = "00000000";
 
 void startCameraServer();
 
@@ -28,6 +28,8 @@ void setup()
 	Serial.print("Camera Ready! Use 'http://");
 	Serial.print(WiFi.localIP());
 	Serial.println("' to connect");
+
+// startLapse();
 }
 
 void loop()

@@ -509,7 +509,7 @@ R"(<!doctype html>
                         </div>
                         <div class="input-group" id="interval-group">
                             <label for="interval">Time-Lapse Interval [ms]</label>
-                            <input type="number" id="gainceiling" min="0" max="1000000000" value="1000" class="default-action">
+                            <input type="number" id="interval" min="0" max="1000000000" value="1000" class="default-action">
                         </div>
                         <section id="buttons">
                             <button id="get-still">Get Still</button>
@@ -590,13 +590,18 @@ document.addEventListener('DOMContentLoaded', function (event)
         value = el.checked ? 1 : 0
         break
       case 'range':
+      	break
       case 'select-one':
         value = el.value
         break
       case 'button':
+      	break
       case 'submit':
         value = '1'
         break
+      case 'number':
+      	value = el.value
+	break
       default:
         return
     }

@@ -26,7 +26,7 @@ const char *indexHtml =
 #include "index.h"
 	;
 
-unsigned long interval = 1000;
+extern unsigned long frameInterval;
 
 typedef struct
 {
@@ -302,7 +302,7 @@ static esp_err_t status_handler(httpd_req_t *req)
 	p += sprintf(p, "\"hmirror\":%u,", s->status.hmirror);
 	p += sprintf(p, "\"dcw\":%u,", s->status.dcw);
 	p += sprintf(p, "\"colorbar\":%u,", s->status.colorbar);
-	p += sprintf(p, "\"interval\":%u,", interval);
+	p += sprintf(p, "\"interval\":%u", frameInterval);
 	*p++ = '}';
 	*p++ = 0;
 	httpd_resp_set_type(req, "application/json");

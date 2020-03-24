@@ -1,0 +1,14 @@
+### PlatformIO ###
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+.pio
+
+### VisualStudioCode ###
+.vscode/*
+*.bak
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history

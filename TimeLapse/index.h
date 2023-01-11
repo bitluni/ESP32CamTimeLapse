@@ -590,6 +590,7 @@ document.addEventListener('DOMContentLoaded', function (event)
         value = el.checked ? 1 : 0
         break
       case 'range':
+        value = el.value
       	break
       case 'select-one':
         value = el.value

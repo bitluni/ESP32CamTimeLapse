@@ -109,11 +109,13 @@ static esp_err_t capture_handler(httpd_req_t *req)
 static esp_err_t startLapseHandler(httpd_req_t *req)
 {
 	startLapse();
+	return ESP_OK;
 }
 
 static esp_err_t stopLapseHandler(httpd_req_t *req)
 {
 	stopLapse();
+	return ESP_OK;
 }
 
 static esp_err_t streamHandler(httpd_req_t *req)

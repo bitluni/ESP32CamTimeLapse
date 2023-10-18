@@ -4,7 +4,7 @@ Please visit https://bitluni.net/esp32camtimelapse for project information.
 
 ## Create timelapse
 
-`ffmpeg -r 60 -f image2 -i pic%05d.jpg -vcodec libx264 -crf 10 -pix_fmt yuv420p lapse.mp4`
+`ffmpeg -r 20 -f image2 -i pic%05d.jpg -vcodec libx264 -crf 10 -pix_fmt yuv420p lapse.mp4`
 
 The meaning of the parameters is:
 
